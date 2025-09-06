@@ -8,7 +8,10 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin : "https://dmusic.onrender.com",
+    credentials : true,
+}));
 
 export const redisClient = redis.createClient({
     password : process.env.REDIS_PASSWORD as string,
